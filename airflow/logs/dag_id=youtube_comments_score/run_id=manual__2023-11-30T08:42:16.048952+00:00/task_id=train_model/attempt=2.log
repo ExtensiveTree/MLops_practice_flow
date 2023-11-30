@@ -1,0 +1,26 @@
+[2023-11-30T13:50:56.900+0500] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: youtube_comments_score.train_model manual__2023-11-30T08:42:16.048952+00:00 [queued]>
+[2023-11-30T13:50:56.926+0500] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: youtube_comments_score.train_model manual__2023-11-30T08:42:16.048952+00:00 [queued]>
+[2023-11-30T13:50:56.936+0500] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2023-11-30T13:50:57.002+0500] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): train_model> on 2023-11-30 08:42:16.048952+00:00
+[2023-11-30T13:50:57.096+0500] {standard_task_runner.py:57} INFO - Started process 26173 to run task
+[2023-11-30T13:50:57.090+0500] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'youtube_comments_score', 'train_model', 'manual__2023-11-30T08:42:16.048952+00:00', '--job-id', '52', '--raw', '--subdir', 'DAGS_FOLDER/youtube_comments_score.py', '--cfg-path', '/tmp/tmpwkdoci44']
+[2023-11-30T13:50:57.107+0500] {standard_task_runner.py:85} INFO - Job 52: Subtask train_model
+[2023-11-30T13:50:57.538+0500] {task_command.py:416} INFO - Running <TaskInstance: youtube_comments_score.train_model manual__2023-11-30T08:42:16.048952+00:00 [running]> on host mlops
+[2023-11-30T13:50:57.975+0500] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='youtube_comments_score' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2023-11-30T08:42:16.048952+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-30T08:42:16.048952+00:00'
+[2023-11-30T13:50:57.993+0500] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-11-30T13:50:57.996+0500] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /home/akashy/staidg/scripts/train_model.py']
+[2023-11-30T13:50:58.233+0500] {subprocess.py:86} INFO - Output:
+[2023-11-30T13:50:58.338+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/scripts/train_model.py", line 12
+[2023-11-30T13:50:58.339+0500] {subprocess.py:93} INFO -     print(df.columns = ['id', 'counts'])
+[2023-11-30T13:50:58.339+0500] {subprocess.py:93} INFO -           ^
+[2023-11-30T13:50:58.339+0500] {subprocess.py:93} INFO - SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
+[2023-11-30T13:50:58.372+0500] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-11-30T13:50:58.594+0500] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/akashy/staidg/env/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-11-30T13:50:58.683+0500] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=youtube_comments_score, task_id=train_model, execution_date=20231130T084216, start_date=20231130T085056, end_date=20231130T085058
+[2023-11-30T13:50:58.847+0500] {standard_task_runner.py:104} ERROR - Failed to execute job 52 for task train_model (Bash command failed. The command returned a non-zero exit code 1.; 26173)
+[2023-11-30T13:50:58.968+0500] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-30T13:50:59.271+0500] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

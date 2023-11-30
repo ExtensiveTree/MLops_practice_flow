@@ -1,0 +1,43 @@
+[2023-11-30T13:45:33.979+0500] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: youtube_comments_score.train_model manual__2023-11-30T08:42:16.048952+00:00 [queued]>
+[2023-11-30T13:45:34.084+0500] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: youtube_comments_score.train_model manual__2023-11-30T08:42:16.048952+00:00 [queued]>
+[2023-11-30T13:45:34.089+0500] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-11-30T13:45:34.183+0500] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): train_model> on 2023-11-30 08:42:16.048952+00:00
+[2023-11-30T13:45:34.220+0500] {standard_task_runner.py:57} INFO - Started process 25062 to run task
+[2023-11-30T13:45:34.250+0500] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'youtube_comments_score', 'train_model', 'manual__2023-11-30T08:42:16.048952+00:00', '--job-id', '51', '--raw', '--subdir', 'DAGS_FOLDER/youtube_comments_score.py', '--cfg-path', '/tmp/tmpuca9ufpd']
+[2023-11-30T13:45:34.255+0500] {standard_task_runner.py:85} INFO - Job 51: Subtask train_model
+[2023-11-30T13:45:34.980+0500] {task_command.py:416} INFO - Running <TaskInstance: youtube_comments_score.train_model manual__2023-11-30T08:42:16.048952+00:00 [running]> on host mlops
+[2023-11-30T13:45:36.049+0500] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='youtube_comments_score' AIRFLOW_CTX_TASK_ID='train_model' AIRFLOW_CTX_EXECUTION_DATE='2023-11-30T08:42:16.048952+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-30T08:42:16.048952+00:00'
+[2023-11-30T13:45:36.057+0500] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-11-30T13:45:36.086+0500] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /home/akashy/staidg/scripts/train_model.py']
+[2023-11-30T13:45:36.181+0500] {subprocess.py:86} INFO - Output:
+[2023-11-30T13:45:45.858+0500] {subprocess.py:93} INFO - /home/akashy/staidg/env/lib/python3.8/site-packages/pydantic/_internal/_fields.py:149: UserWarning: Field "model_server_url" has conflict with protected namespace "model_".
+[2023-11-30T13:45:45.860+0500] {subprocess.py:93} INFO - 
+[2023-11-30T13:45:45.864+0500] {subprocess.py:93} INFO - You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+[2023-11-30T13:45:45.865+0500] {subprocess.py:93} INFO -   warnings.warn(
+[2023-11-30T13:45:45.880+0500] {subprocess.py:93} INFO - /home/akashy/staidg/env/lib/python3.8/site-packages/pydantic/_internal/_config.py:321: UserWarning: Valid config keys have changed in V2:
+[2023-11-30T13:45:45.888+0500] {subprocess.py:93} INFO - * 'schema_extra' has been renamed to 'json_schema_extra'
+[2023-11-30T13:45:45.889+0500] {subprocess.py:93} INFO -   warnings.warn(message, UserWarning)
+[2023-11-30T13:45:45.890+0500] {subprocess.py:93} INFO - 2023/11/30 13:45:45 INFO mlflow.tracking.fluent: Experiment with name 'train_model' does not exist. Creating a new experiment.
+[2023-11-30T13:45:46.032+0500] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-11-30T13:45:46.037+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/scripts/train_model.py", line 12, in <module>
+[2023-11-30T13:45:46.162+0500] {subprocess.py:93} INFO -     df.columns = ['id', 'counts']
+[2023-11-30T13:45:46.163+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/pandas/core/generic.py", line 6002, in __setattr__
+[2023-11-30T13:45:46.163+0500] {subprocess.py:93} INFO -     return object.__setattr__(self, name, value)
+[2023-11-30T13:45:46.163+0500] {subprocess.py:93} INFO -   File "pandas/_libs/properties.pyx", line 69, in pandas._libs.properties.AxisProperty.__set__
+[2023-11-30T13:45:46.164+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/pandas/core/generic.py", line 730, in _set_axis
+[2023-11-30T13:45:46.164+0500] {subprocess.py:93} INFO -     self._mgr.set_axis(axis, labels)
+[2023-11-30T13:45:46.164+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/pandas/core/internals/managers.py", line 225, in set_axis
+[2023-11-30T13:45:46.165+0500] {subprocess.py:93} INFO -     self._validate_set_axis(axis, new_labels)
+[2023-11-30T13:45:46.165+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/pandas/core/internals/base.py", line 70, in _validate_set_axis
+[2023-11-30T13:45:46.165+0500] {subprocess.py:93} INFO -     raise ValueError(
+[2023-11-30T13:45:46.166+0500] {subprocess.py:93} INFO - ValueError: Length mismatch: Expected axis has 4 elements, new values have 2 elements
+[2023-11-30T13:45:46.783+0500] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-11-30T13:45:46.898+0500] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/akashy/staidg/env/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-11-30T13:45:46.923+0500] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=youtube_comments_score, task_id=train_model, execution_date=20231130T084216, start_date=20231130T084533, end_date=20231130T084546
+[2023-11-30T13:45:47.062+0500] {standard_task_runner.py:104} ERROR - Failed to execute job 51 for task train_model (Bash command failed. The command returned a non-zero exit code 1.; 25062)
+[2023-11-30T13:45:47.107+0500] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-30T13:45:47.402+0500] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,23 @@
+[2023-11-30T13:42:58.165+0500] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: youtube_comments_score.get_data manual__2023-11-30T08:42:16.048952+00:00 [queued]>
+[2023-11-30T13:42:58.330+0500] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: youtube_comments_score.get_data manual__2023-11-30T08:42:16.048952+00:00 [queued]>
+[2023-11-30T13:42:58.343+0500] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-11-30T13:42:58.574+0500] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): get_data> on 2023-11-30 08:42:16.048952+00:00
+[2023-11-30T13:42:58.658+0500] {standard_task_runner.py:57} INFO - Started process 24450 to run task
+[2023-11-30T13:42:58.860+0500] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'youtube_comments_score', 'get_data', 'manual__2023-11-30T08:42:16.048952+00:00', '--job-id', '48', '--raw', '--subdir', 'DAGS_FOLDER/youtube_comments_score.py', '--cfg-path', '/tmp/tmpibsi11zb']
+[2023-11-30T13:42:58.981+0500] {standard_task_runner.py:85} INFO - Job 48: Subtask get_data
+[2023-11-30T13:43:00.036+0500] {task_command.py:416} INFO - Running <TaskInstance: youtube_comments_score.get_data manual__2023-11-30T08:42:16.048952+00:00 [running]> on host mlops
+[2023-11-30T13:43:01.080+0500] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='youtube_comments_score' AIRFLOW_CTX_TASK_ID='get_data' AIRFLOW_CTX_EXECUTION_DATE='2023-11-30T08:42:16.048952+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-30T08:42:16.048952+00:00'
+[2023-11-30T13:43:01.089+0500] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-11-30T13:43:01.091+0500] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /home/akashy/staidg/scripts/get_data.py']
+[2023-11-30T13:43:01.239+0500] {subprocess.py:86} INFO - Output:
+[2023-11-30T13:44:28.331+0500] {subprocess.py:93} INFO - /home/akashy/staidg/env/lib/python3.8/site-packages/pydantic/_internal/_fields.py:149: UserWarning: Field "model_server_url" has conflict with protected namespace "model_".
+[2023-11-30T13:44:28.338+0500] {subprocess.py:93} INFO - 
+[2023-11-30T13:44:28.338+0500] {subprocess.py:93} INFO - You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+[2023-11-30T13:44:28.339+0500] {subprocess.py:93} INFO -   warnings.warn(
+[2023-11-30T13:44:28.339+0500] {subprocess.py:93} INFO - /home/akashy/staidg/env/lib/python3.8/site-packages/pydantic/_internal/_config.py:321: UserWarning: Valid config keys have changed in V2:
+[2023-11-30T13:44:28.339+0500] {subprocess.py:93} INFO - * 'schema_extra' has been renamed to 'json_schema_extra'
+[2023-11-30T13:44:28.340+0500] {subprocess.py:93} INFO -   warnings.warn(message, UserWarning)
+[2023-11-30T13:44:29.211+0500] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-11-30T13:44:29.534+0500] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=youtube_comments_score, task_id=get_data, execution_date=20231130T084216, start_date=20231130T084258, end_date=20231130T084429
+[2023-11-30T13:44:29.646+0500] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-30T13:44:29.785+0500] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

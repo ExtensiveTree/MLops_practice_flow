@@ -1,0 +1,112 @@
+[2023-11-29T22:20:42.483+0500] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: youtube_comments_score.get_data manual__2023-11-29T17:14:01.023615+00:00 [queued]>
+[2023-11-29T22:20:42.531+0500] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: youtube_comments_score.get_data manual__2023-11-29T17:14:01.023615+00:00 [queued]>
+[2023-11-29T22:20:42.532+0500] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2023-11-29T22:20:42.588+0500] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): get_data> on 2023-11-29 17:14:01.023615+00:00
+[2023-11-29T22:20:42.605+0500] {standard_task_runner.py:57} INFO - Started process 14852 to run task
+[2023-11-29T22:20:42.643+0500] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'youtube_comments_score', 'get_data', 'manual__2023-11-29T17:14:01.023615+00:00', '--job-id', '41', '--raw', '--subdir', 'DAGS_FOLDER/youtube_comments_score.py', '--cfg-path', '/tmp/tmpgujyj1q9']
+[2023-11-29T22:20:42.648+0500] {standard_task_runner.py:85} INFO - Job 41: Subtask get_data
+[2023-11-29T22:20:43.395+0500] {task_command.py:416} INFO - Running <TaskInstance: youtube_comments_score.get_data manual__2023-11-29T17:14:01.023615+00:00 [running]> on host mlops
+[2023-11-29T22:20:44.331+0500] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='admin' AIRFLOW_CTX_DAG_ID='youtube_comments_score' AIRFLOW_CTX_TASK_ID='get_data' AIRFLOW_CTX_EXECUTION_DATE='2023-11-29T17:14:01.023615+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-29T17:14:01.023615+00:00'
+[2023-11-29T22:20:44.336+0500] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-11-29T22:20:44.368+0500] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /home/akashy/staidg/scripts/get_data.py']
+[2023-11-29T22:20:44.429+0500] {subprocess.py:86} INFO - Output:
+[2023-11-29T22:21:49.531+0500] {subprocess.py:93} INFO - /home/akashy/staidg/env/lib/python3.8/site-packages/pydantic/_internal/_fields.py:149: UserWarning: Field "model_server_url" has conflict with protected namespace "model_".
+[2023-11-29T22:21:49.533+0500] {subprocess.py:93} INFO - 
+[2023-11-29T22:21:49.533+0500] {subprocess.py:93} INFO - You may be able to resolve this warning by setting `model_config['protected_namespaces'] = ()`.
+[2023-11-29T22:21:49.535+0500] {subprocess.py:93} INFO -   warnings.warn(
+[2023-11-29T22:21:49.535+0500] {subprocess.py:93} INFO - /home/akashy/staidg/env/lib/python3.8/site-packages/pydantic/_internal/_config.py:321: UserWarning: Valid config keys have changed in V2:
+[2023-11-29T22:21:49.536+0500] {subprocess.py:93} INFO - * 'schema_extra' has been renamed to 'json_schema_extra'
+[2023-11-29T22:21:49.537+0500] {subprocess.py:93} INFO -   warnings.warn(message, UserWarning)
+[2023-11-29T22:21:49.538+0500] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-11-29T22:21:49.538+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/urllib3/connection.py", line 203, in _new_conn
+[2023-11-29T22:21:49.538+0500] {subprocess.py:93} INFO -     sock = connection.create_connection(
+[2023-11-29T22:21:49.538+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+[2023-11-29T22:21:49.539+0500] {subprocess.py:93} INFO -     raise err
+[2023-11-29T22:21:49.539+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/urllib3/util/connection.py", line 73, in create_connection
+[2023-11-29T22:21:49.539+0500] {subprocess.py:93} INFO -     sock.connect(sa)
+[2023-11-29T22:21:49.539+0500] {subprocess.py:93} INFO - ConnectionRefusedError: [Errno 111] Connection refused
+[2023-11-29T22:21:49.540+0500] {subprocess.py:93} INFO - 
+[2023-11-29T22:21:49.540+0500] {subprocess.py:93} INFO - The above exception was the direct cause of the following exception:
+[2023-11-29T22:21:49.540+0500] {subprocess.py:93} INFO - 
+[2023-11-29T22:21:49.540+0500] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-11-29T22:21:49.541+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 790, in urlopen
+[2023-11-29T22:21:49.541+0500] {subprocess.py:93} INFO -     response = self._make_request(
+[2023-11-29T22:21:49.541+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 496, in _make_request
+[2023-11-29T22:21:49.541+0500] {subprocess.py:93} INFO -     conn.request(
+[2023-11-29T22:21:49.541+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/urllib3/connection.py", line 395, in request
+[2023-11-29T22:21:49.542+0500] {subprocess.py:93} INFO -     self.endheaders()
+[2023-11-29T22:21:49.542+0500] {subprocess.py:93} INFO -   File "/usr/lib/python3.8/http/client.py", line 1251, in endheaders
+[2023-11-29T22:21:49.543+0500] {subprocess.py:93} INFO -     self._send_output(message_body, encode_chunked=encode_chunked)
+[2023-11-29T22:21:49.543+0500] {subprocess.py:93} INFO -   File "/usr/lib/python3.8/http/client.py", line 1011, in _send_output
+[2023-11-29T22:21:49.543+0500] {subprocess.py:93} INFO -     self.send(msg)
+[2023-11-29T22:21:49.544+0500] {subprocess.py:93} INFO -   File "/usr/lib/python3.8/http/client.py", line 951, in send
+[2023-11-29T22:21:49.544+0500] {subprocess.py:93} INFO -     self.connect()
+[2023-11-29T22:21:49.545+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/urllib3/connection.py", line 243, in connect
+[2023-11-29T22:21:49.545+0500] {subprocess.py:93} INFO -     self.sock = self._new_conn()
+[2023-11-29T22:21:49.546+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/urllib3/connection.py", line 218, in _new_conn
+[2023-11-29T22:21:49.546+0500] {subprocess.py:93} INFO -     raise NewConnectionError(
+[2023-11-29T22:21:49.546+0500] {subprocess.py:93} INFO - urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7f721a51b220>: Failed to establish a new connection: [Errno 111] Connection refused
+[2023-11-29T22:21:49.546+0500] {subprocess.py:93} INFO - 
+[2023-11-29T22:21:49.547+0500] {subprocess.py:93} INFO - The above exception was the direct cause of the following exception:
+[2023-11-29T22:21:49.547+0500] {subprocess.py:93} INFO - 
+[2023-11-29T22:21:49.547+0500] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-11-29T22:21:49.547+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/requests/adapters.py", line 486, in send
+[2023-11-29T22:21:49.548+0500] {subprocess.py:93} INFO -     resp = conn.urlopen(
+[2023-11-29T22:21:49.548+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 874, in urlopen
+[2023-11-29T22:21:49.548+0500] {subprocess.py:93} INFO -     return self.urlopen(
+[2023-11-29T22:21:49.549+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 874, in urlopen
+[2023-11-29T22:21:49.550+0500] {subprocess.py:93} INFO -     return self.urlopen(
+[2023-11-29T22:21:49.551+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 874, in urlopen
+[2023-11-29T22:21:49.551+0500] {subprocess.py:93} INFO -     return self.urlopen(
+[2023-11-29T22:21:49.551+0500] {subprocess.py:93} INFO -   [Previous line repeated 2 more times]
+[2023-11-29T22:21:49.552+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/urllib3/connectionpool.py", line 844, in urlopen
+[2023-11-29T22:21:49.552+0500] {subprocess.py:93} INFO -     retries = retries.increment(
+[2023-11-29T22:21:49.552+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/urllib3/util/retry.py", line 515, in increment
+[2023-11-29T22:21:49.553+0500] {subprocess.py:93} INFO -     raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+[2023-11-29T22:21:49.553+0500] {subprocess.py:93} INFO - urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=get_data (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f721a51b220>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2023-11-29T22:21:49.553+0500] {subprocess.py:93} INFO - 
+[2023-11-29T22:21:49.553+0500] {subprocess.py:93} INFO - During handling of the above exception, another exception occurred:
+[2023-11-29T22:21:49.554+0500] {subprocess.py:93} INFO - 
+[2023-11-29T22:21:49.554+0500] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-11-29T22:21:49.554+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 99, in http_request
+[2023-11-29T22:21:49.554+0500] {subprocess.py:93} INFO -     return _get_http_response_with_retries(
+[2023-11-29T22:21:49.555+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/mlflow/utils/request_utils.py", line 151, in _get_http_response_with_retries
+[2023-11-29T22:21:49.555+0500] {subprocess.py:93} INFO -     return session.request(method, url, **kwargs)
+[2023-11-29T22:21:49.555+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+[2023-11-29T22:21:49.555+0500] {subprocess.py:93} INFO -     resp = self.send(prep, **send_kwargs)
+[2023-11-29T22:21:49.556+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+[2023-11-29T22:21:49.556+0500] {subprocess.py:93} INFO -     r = adapter.send(request, **kwargs)
+[2023-11-29T22:21:49.556+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/requests/adapters.py", line 519, in send
+[2023-11-29T22:21:49.556+0500] {subprocess.py:93} INFO -     raise ConnectionError(e, request=request)
+[2023-11-29T22:21:49.556+0500] {subprocess.py:93} INFO - requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=get_data (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f721a51b220>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2023-11-29T22:21:49.557+0500] {subprocess.py:93} INFO - 
+[2023-11-29T22:21:49.557+0500] {subprocess.py:93} INFO - During handling of the above exception, another exception occurred:
+[2023-11-29T22:21:49.557+0500] {subprocess.py:93} INFO - 
+[2023-11-29T22:21:49.557+0500] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2023-11-29T22:21:49.558+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/scripts/get_data.py", line 11, in <module>
+[2023-11-29T22:21:49.558+0500] {subprocess.py:93} INFO -     mlflow.set_experiment("get_data")
+[2023-11-29T22:21:49.558+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/mlflow/tracking/fluent.py", line 135, in set_experiment
+[2023-11-29T22:21:49.558+0500] {subprocess.py:93} INFO -     experiment = client.get_experiment_by_name(experiment_name)
+[2023-11-29T22:21:49.558+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/mlflow/tracking/client.py", line 513, in get_experiment_by_name
+[2023-11-29T22:21:49.559+0500] {subprocess.py:93} INFO -     return self._tracking_client.get_experiment_by_name(name)
+[2023-11-29T22:21:49.559+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/mlflow/tracking/_tracking_service/client.py", line 221, in get_experiment_by_name
+[2023-11-29T22:21:49.559+0500] {subprocess.py:93} INFO -     return self.store.get_experiment_by_name(name)
+[2023-11-29T22:21:49.559+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/mlflow/store/tracking/rest_store.py", line 306, in get_experiment_by_name
+[2023-11-29T22:21:49.560+0500] {subprocess.py:93} INFO -     response_proto = self._call_endpoint(GetExperimentByName, req_body)
+[2023-11-29T22:21:49.560+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/mlflow/store/tracking/rest_store.py", line 59, in _call_endpoint
+[2023-11-29T22:21:49.560+0500] {subprocess.py:93} INFO -     return call_endpoint(self.get_host_creds(), endpoint, method, json_body, response_proto)
+[2023-11-29T22:21:49.560+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 206, in call_endpoint
+[2023-11-29T22:21:49.560+0500] {subprocess.py:93} INFO -     response = http_request(**call_kwargs)
+[2023-11-29T22:21:49.561+0500] {subprocess.py:93} INFO -   File "/home/akashy/staidg/env/lib/python3.8/site-packages/mlflow/utils/rest_utils.py", line 120, in http_request
+[2023-11-29T22:21:49.561+0500] {subprocess.py:93} INFO -     raise MlflowException(f"API request to {url} failed with exception {e}")
+[2023-11-29T22:21:49.561+0500] {subprocess.py:93} INFO - mlflow.exceptions.MlflowException: API request to http://localhost:5000/api/2.0/mlflow/experiments/get-by-name failed with exception HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/2.0/mlflow/experiments/get-by-name?experiment_name=get_data (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f721a51b220>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2023-11-29T22:21:50.106+0500] {subprocess.py:97} INFO - Command exited with return code 1
+[2023-11-29T22:21:50.297+0500] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/akashy/staidg/env/lib/python3.8/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2023-11-29T22:21:50.307+0500] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=youtube_comments_score, task_id=get_data, execution_date=20231129T171401, start_date=20231129T172042, end_date=20231129T172150
+[2023-11-29T22:21:50.386+0500] {standard_task_runner.py:104} ERROR - Failed to execute job 41 for task get_data (Bash command failed. The command returned a non-zero exit code 1.; 14852)
+[2023-11-29T22:21:50.483+0500] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-29T22:21:50.776+0500] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
